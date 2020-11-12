@@ -87,11 +87,10 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.raini),
-//                  Image(
-//                    image: NetworkImage(
-//                        "http://openweathermap.org/img/wn/10d@2x.png"),
-//                  ),
+                  Image(
+                    image: NetworkImage(
+                        "http://openweathermap.org/img/wn/10d@2x.png"),
+                  ),
                   Text(
                     "28°",
                     style: TextStyle(
