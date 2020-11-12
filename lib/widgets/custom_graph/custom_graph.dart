@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 
-import '../custom_painter.dart';
-import '../graph_utils.dart';
+import 'custom_painter.dart';
+import 'graph_utils.dart';
 
 Widget _buildGraphLabels({
   BoxConstraints constraints,
