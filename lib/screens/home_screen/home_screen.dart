@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:weather_app/constants/colors.dart';
 import 'package:weather_app/widgets/custom_graph/custom_graph.dart';
 
 import 'bottom_row.dart';
@@ -29,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: CustomColors.white,
       appBar: AppBar(
         toolbarHeight: 90.0,
         title: Container(
@@ -42,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(
                   fontSize: 22.0,
                   letterSpacing: .5,
-                  color: Colors.white,
+                  color: CustomColors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -54,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.w400,
-                  color: Colors.white,
+                  color: CustomColors.white,
                 ),
               ),
             ],
@@ -77,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
               "Today",
               style: TextStyle(
                 fontSize: 24.0,
-                color: Colors.black,
+                color: CustomColors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -86,16 +87,17 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image(
-                    image: NetworkImage(
-                        "http://openweathermap.org/img/wn/10d@2x.png"),
-                  ),
+                  Icon(Icons.raini),
+//                  Image(
+//                    image: NetworkImage(
+//                        "http://openweathermap.org/img/wn/10d@2x.png"),
+//                  ),
                   Text(
                     "28°",
                     style: TextStyle(
                       fontSize: 32.0,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: CustomColors.black,
                     ),
                   ),
                   Text(
@@ -103,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w600,
-                      color: Colors.grey,
+                      color: CustomColors.gray,
                     ),
                   ),
                 ],

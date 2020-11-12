@@ -8,12 +8,11 @@ class BottomRow extends StatelessWidget {
     return Container(
       height: 80.0,
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-      margin: EdgeInsets.only(bottom: 20.0),
       decoration: BoxDecoration(
         color: Colors.red,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20.0),
-          topRight: Radius.circular(20.0),
+          topLeft: Radius.circular(10.0),
+          topRight: Radius.circular(10.0),
         ),
       ),
       child: Column(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/constants/colors.dart';
 
 import 'graph_utils.dart';
 
@@ -18,7 +19,7 @@ class GraphLinePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint();
-    paint.color = Colors.red;
+    paint.color = CustomColors.red;
     paint.strokeWidth = 1.0;
     paint.style = PaintingStyle.stroke;
 
@@ -43,7 +44,7 @@ class GraphLinePainter extends CustomPainter {
     paint.style = PaintingStyle.fill;
     paint.color = Color(0x22ff0000);
     canvas.drawCircle(circlePos, 11.0, paint);
-    paint.color = Colors.red;
+    paint.color = CustomColors.red;
     canvas.drawCircle(circlePos, 5.0, paint);
   }
 

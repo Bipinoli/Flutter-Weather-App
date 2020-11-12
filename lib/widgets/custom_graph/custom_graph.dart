@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:weather_app/constants/colors.dart';
 
 import 'custom_painter.dart';
 import 'graph_utils.dart';
@@ -29,7 +30,7 @@ Widget _buildGraphLabels({
                 "${dataY[index]}°",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: CustomColors.black,
                 ),
               ),
             ],
@@ -44,7 +45,7 @@ Widget _buildGraphLabels({
           top: loc.dy + 10.0,
           child: Text(labelTexts[index],
               style: TextStyle(
-                color: Colors.black54,
+                color: CustomColors.gray,
                 fontWeight: FontWeight.w500,
                 fontSize: 12.0,
               )),
