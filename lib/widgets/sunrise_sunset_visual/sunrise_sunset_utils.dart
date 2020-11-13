@@ -34,12 +34,10 @@ class SizingAndLocation {
   }
 
   Offset locateSunRisePoint() {
-    print("sunrise: $minWidth, $minHeight");
     return Offset(minWidth, minHeight);
   }
 
   Offset locateSunSetPoint() {
-    print("sunset: ${size.width - minWidth}, $minHeight");
     return Offset(size.width - minWidth, minHeight);
   }
 }

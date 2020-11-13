@@ -47,15 +47,15 @@ class SunriseSunset extends StatelessWidget {
             SizingAndLocation sizingAndLoc = SizingAndLocation(
                 size: Size(constraints.maxWidth, constraints.maxHeight));
             Offset sunLocation = sizingAndLoc.locateSunPosition(coverPercent);
-            print(sunLocation);
             return Stack(
               children: [
                 Positioned(
-                  left: sunLocation.dx - 12.0,
-                  top: sunLocation.dy - 14.0,
+                  left: sunLocation.dx - 16.0,
+                  top: sunLocation.dy - 16.0,
                   child: Icon(
                     CupertinoIcons.sun_max_fill,
-                    color: Colors.deepOrange,
+                    color: CustomColors.red,
+                    size: 32.0,
                   ),
                 ),
                 ..._buildLabels(

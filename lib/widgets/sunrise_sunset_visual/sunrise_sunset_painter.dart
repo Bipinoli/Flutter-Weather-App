@@ -13,8 +13,8 @@ class SunriseSunsetPainter extends CustomPainter {
 
   void _drawDashedArc(Rect rect, double startAngle, double sweepAngle,
       Canvas canvas, Paint paint) {
-    final double angleGap = 0.05;
-    final double angleDashWidth = 0.1;
+    final double angleGap = 0.02;
+    final double angleDashWidth = 0.05;
     for (int i = 0; i < ((sweepAngle) / (angleGap + angleDashWidth)); i++) {
       double angleStart = startAngle + (i * (angleGap + angleDashWidth));
       canvas.drawArc(rect, angleStart, angleDashWidth, false, paint);
@@ -24,7 +24,6 @@ class SunriseSunsetPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint();
-    paint.color = Colors.orangeAccent;
     paint.style = PaintingStyle.stroke;
     paint.strokeWidth = 2.0;
 
@@ -71,7 +70,7 @@ class SunriseSunsetPainter extends CustomPainter {
         Offset(0.0, minHeight), Offset(size.width, minHeight), paint);
 
     // draw sunrinse and sunset entry point
-    paint.color = Colors.orange;
+    paint.color = CustomColors.red;
     paint.style = PaintingStyle.fill;
     canvas.drawCircle(sizingAndLoc.locateSunRisePoint(), 4.0, paint);
     canvas.drawCircle(sizingAndLoc.locateSunSetPoint(), 4.0, paint);

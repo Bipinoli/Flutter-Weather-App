@@ -1,6 +1,7 @@
 import "dart:ui";
 
 import "package:flutter/material.dart";
+import 'package:weather_app/constants/colors.dart';
 
 class BottomRow extends StatelessWidget {
   @override
@@ -9,15 +10,6 @@ class BottomRow extends StatelessWidget {
       height: 80.0,
       padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
       margin: EdgeInsets.only(bottom: 40.0),
-      decoration: BoxDecoration(
-        color: Colors.redAccent,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(10.0),
-          topRight: Radius.circular(10.0),
-          bottomLeft: Radius.circular(10.0),
-          bottomRight: Radius.circular(10.0),
-        ),
-      ),
       child: Column(
         children: [
           Row(
@@ -28,8 +20,7 @@ class BottomRow extends StatelessWidget {
                   Text(
                     "Pressure",
                     style: TextStyle(
-                      color: Colors.white60,
-                      fontWeight: FontWeight.w600,
+                      color: CustomColors.gray,
                     ),
                   ),
                   SizedBox(
@@ -39,7 +30,7 @@ class BottomRow extends StatelessWidget {
                     "810mb",
                     style: TextStyle(
                       fontSize: 18.0,
-                      color: Colors.white,
+                      color: CustomColors.black,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -50,8 +41,7 @@ class BottomRow extends StatelessWidget {
                   Text(
                     "Visibility",
                     style: TextStyle(
-                      color: Colors.white60,
-                      fontWeight: FontWeight.w600,
+                      color: CustomColors.gray,
                     ),
                   ),
                   SizedBox(
@@ -61,7 +51,7 @@ class BottomRow extends StatelessWidget {
                     "5km",
                     style: TextStyle(
                       fontSize: 18.0,
-                      color: Colors.white,
+                      color: CustomColors.black,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -72,8 +62,7 @@ class BottomRow extends StatelessWidget {
                   Text(
                     "Humidity",
                     style: TextStyle(
-                      color: Colors.white60,
-                      fontWeight: FontWeight.w600,
+                      color: CustomColors.gray,
                     ),
                   ),
                   SizedBox(
@@ -83,7 +72,7 @@ class BottomRow extends StatelessWidget {
                     "94%",
                     style: TextStyle(
                       fontSize: 18.0,
-                      color: Colors.white,
+                      color: CustomColors.black,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

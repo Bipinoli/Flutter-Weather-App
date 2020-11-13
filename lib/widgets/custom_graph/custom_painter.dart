@@ -42,7 +42,7 @@ class GraphLinePainter extends CustomPainter {
     // draw circle on a line
     Offset circlePos = locationInCanvas[highlightedIndex];
     paint.style = PaintingStyle.fill;
-    paint.color = Color(0x22ff0000);
+    paint.color = CustomColors.lightRed;
     canvas.drawCircle(circlePos, 11.0, paint);
     paint.color = CustomColors.red;
     canvas.drawCircle(circlePos, 5.0, paint);

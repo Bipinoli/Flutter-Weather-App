@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 "Calicut, Kerela",
                 style: TextStyle(
                   fontSize: 22.0,
-                  color: CustomColors.white,
+                  color: CustomColors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.w400,
-                  color: CustomColors.white,
+                  color: CustomColors.black,
                 ),
               ),
             ],
@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0.0,
         actions: [
           IconButton(icon: Icon(Icons.search), onPressed: () {}),
-          IconButton(icon: Icon(Icons.more_horiz), onPressed: () {}),
+//          IconButton(icon: Icon(Icons.more_horiz), onPressed: () {}),
         ],
       ),
       body: Container(
@@ -98,12 +98,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: CustomColors.black,
                     ),
                   ),
+                  SizedBox(height: 10.0),
                   Text(
                     "Partly Cloudy",
                     style: TextStyle(
                       fontSize: 16.0,
-                      fontWeight: FontWeight.w600,
-                      color: CustomColors.gray,
+                      fontWeight: FontWeight.w400,
+                      color: CustomColors.black,
                     ),
                   ),
                 ],

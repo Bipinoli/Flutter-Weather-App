@@ -32,7 +32,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
             ),
             Container(
               height: MediaQuery.of(context).size.height * .50,
-//              color: Colors.yellowAccent,
               child: ListView.builder(
                   itemCount: 7,
                   padding: EdgeInsets.only(top: 0.0, bottom: 0.0),
@@ -45,7 +44,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                               child: Text(
                             "WED",
                             style: TextStyle(
-                              color: CustomColors.gray,
+                              color: CustomColors.black,
                             ),
                           )),
                           Expanded(
@@ -67,7 +66,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                 Text(
                                   "Rainy",
                                   style: TextStyle(
-                                    color: CustomColors.gray,
+                                    color: CustomColors.black,
                                   ),
                                 ),
                               ],
