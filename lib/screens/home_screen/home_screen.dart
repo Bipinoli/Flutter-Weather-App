@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:flutter/services.dart';
 import 'package:weather_app/constants/colors.dart';
 import 'package:weather_app/widgets/custom_graph/custom_graph.dart';
 
@@ -29,94 +30,107 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: CustomColors.white,
-      appBar: AppBar(
-        toolbarHeight: 90.0,
-        title: Container(
-          padding: EdgeInsets.only(top: 25.0, bottom: 20.0),
+    return GestureDetector(
+      onTap: () {
+        print("unfocusing");
+//        FocusScope.of(context).unfocus();
+        SystemChannels.textInput.invokeMethod('TextInput.hide');
+      },
+      child: Scaffold(
+        backgroundColor: CustomColors.white,
+        appBar: AppBar(
+          toolbarHeight: 90.0,
+          title: Container(
+            padding: EdgeInsets.only(top: 25.0, bottom: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Calicut, Kerela",
+                  style: TextStyle(
+                    fontSize: 22.0,
+                    color: CustomColors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                Text(
+                  "Sunday, 1 AM",
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w400,
+                    color: CustomColors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          elevation: 0.0,
+          actions: [
+            IconButton(
+                icon: Icon(Icons.search, size: 32.0),
+                onPressed: () {
+                  print("clicked");
+
+//                FocusScope.of(context).requestFocus(FocusNode());
+                  SystemChannels.textInput.invokeMethod('TextInput.show');
+                }),
+          ],
+        ),
+        body: Container(
+          padding: EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 30.0,
+              ),
               Text(
-                "Calicut, Kerela",
+                "Today",
                 style: TextStyle(
-                  fontSize: 22.0,
+                  fontSize: 24.0,
                   color: CustomColors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(
-                height: 5.0,
-              ),
-              Text(
-                "Sunday, 1 AM",
-                style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w400,
-                  color: CustomColors.black,
+              Container(
+                height: MediaQuery.of(context).size.height * .3,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image(
+                      image: NetworkImage(
+                          "http://openweathermap.org/img/wn/10d@2x.png"),
+                    ),
+                    Text(
+                      "28°",
+                      style: TextStyle(
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColors.black,
+                      ),
+                    ),
+                    SizedBox(height: 10.0),
+                    Text(
+                      "Partly Cloudy",
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w400,
+                        color: CustomColors.black,
+                      ),
+                    ),
+                  ],
                 ),
               ),
+              buildGraph(
+                  dataY: dataY,
+                  labelTexts: labelTexts,
+                  labelImageUrls: labelImageUrls,
+                  highlightedIndex: highlightedIndex),
+              BottomRow(),
             ],
           ),
-        ),
-        elevation: 0.0,
-        actions: [
-          IconButton(icon: Icon(Icons.search), onPressed: () {}),
-//          IconButton(icon: Icon(Icons.more_horiz), onPressed: () {}),
-        ],
-      ),
-      body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 30.0,
-            ),
-            Text(
-              "Today",
-              style: TextStyle(
-                fontSize: 24.0,
-                color: CustomColors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height * .3,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image(
-                    image: NetworkImage(
-                        "http://openweathermap.org/img/wn/10d@2x.png"),
-                  ),
-                  Text(
-                    "28°",
-                    style: TextStyle(
-                      fontSize: 32.0,
-                      fontWeight: FontWeight.bold,
-                      color: CustomColors.black,
-                    ),
-                  ),
-                  SizedBox(height: 10.0),
-                  Text(
-                    "Partly Cloudy",
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w400,
-                      color: CustomColors.black,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            buildGraph(
-                dataY: dataY,
-                labelTexts: labelTexts,
-                labelImageUrls: labelImageUrls,
-                highlightedIndex: highlightedIndex),
-            BottomRow(),
-          ],
         ),
       ),
     );
