@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:weather_app/constants/colors.dart';
-import 'package:weather_app/widgets/sunrise_sunset_visual/sunrise_sunset.dart';
+import 'package:weather_app/widgets/custom_graph/custom_graph.dart';
 
 import 'bottom_row.dart';
 
@@ -109,12 +109,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-//            buildGraph(
-//                dataY: dataY,
-//                labelTexts: labelTexts,
-//                labelImageUrls: labelImageUrls,
-//                highlightedIndex: highlightedIndex),
-            SunriseSunset(),
+            buildGraph(
+                dataY: dataY,
+                labelTexts: labelTexts,
+                labelImageUrls: labelImageUrls,
+                highlightedIndex: highlightedIndex),
             BottomRow(),
           ],
         ),

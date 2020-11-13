@@ -6,7 +6,7 @@ import 'package:weather_app/widgets/sunrise_sunset_visual/sunrise_sunset_utils.d
 import "sunrise_sunset_painter.dart";
 
 class SunriseSunset extends StatelessWidget {
-  final double coverPercent = 0.82;
+  final double coverPercent = 0.7;
   final String sunRise = "6.05 AM";
   final String sunSet = "6:47 PM";
 
@@ -51,7 +51,7 @@ class SunriseSunset extends StatelessWidget {
             return Stack(
               children: [
                 Positioned(
-                  left: sunLocation.dx - 14.0,
+                  left: sunLocation.dx - 12.0,
                   top: sunLocation.dy - 14.0,
                   child: Icon(
                     CupertinoIcons.sun_max_fill,

@@ -15,7 +15,7 @@ class SizingAndLocation {
   double minWidth;
   SizingAndLocation({this.size}) {
     minHeight = (size.height * 0.7);
-    maxHeight = size.height * 0.2;
+    maxHeight = size.height * 0.08;
     rectWidth = (minHeight - maxHeight) * 2.0;
     minWidth = (size.width - rectWidth) / 2;
   }

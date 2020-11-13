@@ -35,7 +35,7 @@ class SunriseSunsetPainter extends CustomPainter {
     final double minWidth = sizingAndLoc.minWidth;
 
     // draw gray arc
-    paint.color = CustomColors.gray;
+    paint.color = CustomColors.lightGray;
     _drawDashedArc(Rect.fromLTWH(minWidth, maxHeight, rectWidth, rectWidth),
         -pi, pi, canvas, paint);
 
@@ -65,7 +65,7 @@ class SunriseSunsetPainter extends CustomPainter {
         -pi, coverPercent * pi, canvas, paint);
 
     // draw horizon
-    paint.color = CustomColors.gray;
+    paint.color = CustomColors.lightGray;
     paint.strokeWidth = 1.5;
     canvas.drawLine(
         Offset(0.0, minHeight), Offset(size.width, minHeight), paint);

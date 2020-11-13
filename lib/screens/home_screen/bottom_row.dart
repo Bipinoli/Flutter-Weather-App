@@ -7,12 +7,15 @@ class BottomRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 80.0,
-      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+      padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
+      margin: EdgeInsets.only(bottom: 40.0),
       decoration: BoxDecoration(
-        color: Colors.red,
+        color: Colors.redAccent,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(10.0),
           topRight: Radius.circular(10.0),
+          bottomLeft: Radius.circular(10.0),
+          bottomRight: Radius.circular(10.0),
         ),
       ),
       child: Column(
