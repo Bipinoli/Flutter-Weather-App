@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:weather_app/constants/colors.dart';
-import 'package:weather_app/widgets/custom_graph/custom_graph.dart';
+import 'package:weather_app/widgets/sunrise_sunset_visual/sunrise_sunset.dart';
 
 import 'bottom_row.dart';
 
@@ -42,7 +42,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 "Calicut, Kerela",
                 style: TextStyle(
                   fontSize: 22.0,
-                  letterSpacing: .5,
                   color: CustomColors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -110,11 +109,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            buildGraph(
-                dataY: dataY,
-                labelTexts: labelTexts,
-                labelImageUrls: labelImageUrls,
-                highlightedIndex: highlightedIndex),
+//            buildGraph(
+//                dataY: dataY,
+//                labelTexts: labelTexts,
+//                labelImageUrls: labelImageUrls,
+//                highlightedIndex: highlightedIndex),
+            SunriseSunset(),
             BottomRow(),
           ],
         ),
