@@ -76,23 +76,22 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               SizedBox(
-                height: 30.0,
+                height: 10.0,
               ),
               Text(
-                "Today",
+                "3:08 PM",
                 style: TextStyle(
-                  fontSize: 24.0,
+                  fontSize: 30.0,
                   color: CustomColors.black,
-                  fontWeight: FontWeight.bold,
                 ),
               ),
               SizedBox(
-                height: 10.0,
+                height: 5.0,
               ),
               Text(
                 "Saturday, Nov 14, 2020",
                 style: TextStyle(
-                  fontSize: 16.0,
+                  fontSize: 14.0,
                   fontWeight: FontWeight.w400,
                   color: CustomColors.black,
                 ),

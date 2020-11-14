@@ -1,14 +1,31 @@
+import 'package:intl/intl.dart';
 import 'package:weather_app/models/weather_data.dart';
 
 class WeeklyWeather {
   String city;
+  int timezone;
   List<WeatherData> weather;
 
-  WeeklyWeather({this.city, this.weather});
+  WeeklyWeather({this.city, this.timezone, this.weather});
+
+  DateTime get currentDateTime {
+    final DateTime currentUtcTime = DateTime.now().toUtc();
+    final Duration duration = Duration(seconds: timezone);
+    return currentUtcTime.add(duration);
+  }
+
+  String get currentTime {
+    return DateFormat("h:mm a").format(currentDateTime);
+  }
+
+  String get date {
+    return DateFormat("E, MMMM d, y").format(currentDateTime);
+  }
 
   factory WeeklyWeather.mock() {
     return WeeklyWeather(
       city: "Kathmandu",
+      timezone: 20700,
       weather: <WeatherData>[
         WeatherData(
           timeStamp: 1605330900,

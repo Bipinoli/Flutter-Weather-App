@@ -1,4 +1,5 @@
 import 'package:intl/intl.dart';
+import 'package:weather_app/models/utils.dart';
 
 class WeatherData {
   int timeStamp;
@@ -52,15 +53,23 @@ class WeatherData {
   }
 
   String get sunriseTime {
-    return DateFormat("h:mm a").format(_getDateTime(sunRiseTimeStamp));
+    return DateFormat("h:mm a").format(getDateTime(sunRiseTimeStamp));
   }
 
   String get sunsetTime {
-    return DateFormat("h:mm a").format(_getDateTime(sunSetTimeStamp));
+    return DateFormat("h:mm a").format(getDateTime(sunSetTimeStamp));
+  }
+
+  DateTime get sunriseDateTime {
+    return getDateTime(sunRiseTimeStamp);
+  }
+
+  DateTime get sunsetDateTime {
+    return getDateTime(sunSetTimeStamp);
   }
 
   String get weekDay {
-    return DateFormat("EEEE").format(_getDateTime(timeStamp));
+    return DateFormat("EEEE").format(getDateTime(timeStamp));
   }
 
   String get morningTemp {
@@ -77,13 +86,5 @@ class WeatherData {
 
   String get nightTemp {
     return "$nightTempValue° C";
-  }
-
-  String get date {
-    return DateFormat("E, MMMM d, y").format(_getDateTime(timeStamp));
-  }
-
-  DateTime _getDateTime(int timestamp) {
-    return DateTime.fromMillisecondsSinceEpoch(sunRiseTimeStamp * 1000);
   }
 }

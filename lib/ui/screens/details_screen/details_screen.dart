@@ -27,10 +27,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 padding: const EdgeInsets.only(left: 20.0),
                 child: Text(
                   "This Week",
-                  textAlign: TextAlign.left,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     color: CustomColors.black,
-                    fontSize: 18.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -41,46 +41,45 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     itemCount: 7,
                     padding: EdgeInsets.only(top: 0.0, bottom: 0.0),
                     itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.only(left: 50.0, right: 20.0),
-                        child: Row(
-                          children: [
-                            Expanded(
-                                flex: 2,
-                                child: Text(
-                                  "Wednesday",
+                      return Row(
+                        children: [
+                          Expanded(
+                              flex: 4,
+                              child: Text(
+                                "Wednesday",
+                                textAlign: TextAlign.end,
+                                style: TextStyle(
+                                  color: CustomColors.black,
+                                ),
+                              )),
+                          Expanded(
+                              flex: 2,
+                              child: Text(
+                                "24° C",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: CustomColors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )),
+                          Expanded(
+                            flex: 5,
+                            child: Row(
+                              children: [
+                                Image(
+                                    image: NetworkImage(
+                                        "http://openweathermap.org/img/wn/10d.png")),
+                                SizedBox(width: 10.0),
+                                Text(
+                                  "Rainy",
                                   style: TextStyle(
                                     color: CustomColors.black,
                                   ),
-                                )),
-                            Expanded(
-                                flex: 1,
-                                child: Text(
-                                  "24° C",
-                                  style: TextStyle(
-                                    color: CustomColors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )),
-                            Expanded(
-                              flex: 3,
-                              child: Row(
-                                children: [
-                                  Image(
-                                      image: NetworkImage(
-                                          "http://openweathermap.org/img/wn/10d.png")),
-                                  SizedBox(width: 10.0),
-                                  Text(
-                                    "Rainy",
-                                    style: TextStyle(
-                                      color: CustomColors.black,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       );
                     }),
               ),
@@ -90,10 +89,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 padding: const EdgeInsets.only(left: 20.0),
                 child: Text(
                   "Sun",
-                  textAlign: TextAlign.left,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     color: CustomColors.black,
-                    fontSize: 18.0,
+                    fontSize: 22.0,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
