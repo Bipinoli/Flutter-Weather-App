@@ -4,6 +4,12 @@ import "package:flutter/material.dart";
 import 'package:weather_app/ui/constants/colors.dart';
 
 class BottomRow extends StatelessWidget {
+  final String pressure;
+  final String wind;
+  final String humidity;
+
+  BottomRow({this.pressure, this.wind, this.humidity});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +33,7 @@ class BottomRow extends StatelessWidget {
                     height: 6.0,
                   ),
                   Text(
-                    "1021 hpa",
+                    pressure,
                     style: TextStyle(
                       fontSize: 18.0,
                       color: CustomColors.black,
@@ -48,7 +54,7 @@ class BottomRow extends StatelessWidget {
                     height: 6.0,
                   ),
                   Text(
-                    "0.21 m/s",
+                    wind,
                     style: TextStyle(
                       fontSize: 18.0,
                       color: CustomColors.black,
@@ -69,7 +75,7 @@ class BottomRow extends StatelessWidget {
                     height: 6.0,
                   ),
                   Text(
-                    "94%",
+                    humidity,
                     style: TextStyle(
                       fontSize: 18.0,
                       color: CustomColors.black,

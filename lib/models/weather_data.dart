@@ -3,6 +3,7 @@ import 'package:weather_app/models/utils.dart';
 
 class WeatherData {
   int timeStamp;
+  int timezone;
   int sunRiseTimeStamp;
   int sunSetTimeStamp;
   int pressureValue;
@@ -18,6 +19,7 @@ class WeatherData {
 
   WeatherData({
     this.timeStamp,
+    this.timezone,
     this.sunRiseTimeStamp,
     this.sunSetTimeStamp,
     this.pressureValue,
@@ -36,6 +38,7 @@ class WeatherData {
   String toString() {
     return """
       timeStamp: $timeStamp
+      timezone: $timezone
       sunRiseTimeStamp: $sunRiseTimeStamp
       sunSetTimeStamp: $sunSetTimeStamp
       pressureValue: $pressureValue
@@ -72,38 +75,38 @@ class WeatherData {
   }
 
   String get sunriseTime {
-    return DateFormat("h:mm a").format(getDateTime(sunRiseTimeStamp));
+    return DateFormat("h:mm a").format(getDateTime(sunRiseTimeStamp, timezone));
   }
 
   String get sunsetTime {
-    return DateFormat("h:mm a").format(getDateTime(sunSetTimeStamp));
+    return DateFormat("h:mm a").format(getDateTime(sunSetTimeStamp, timezone));
   }
 
   DateTime get sunriseDateTime {
-    return getDateTime(sunRiseTimeStamp);
+    return getDateTime(sunRiseTimeStamp, timezone);
   }
 
   DateTime get sunsetDateTime {
-    return getDateTime(sunSetTimeStamp);
+    return getDateTime(sunSetTimeStamp, timezone);
   }
 
   String get weekDay {
-    return DateFormat("EEEE").format(getDateTime(timeStamp));
+    return DateFormat("EEEE").format(getDateTime(timeStamp, timezone));
   }
 
   String get morningTemp {
-    return "$morningTempValue° C";
+    return "${morningTempValue.round()}° C";
   }
 
   String get dayTemp {
-    return "$dayTempValue° C";
+    return "${dayTempValue.round()}° C";
   }
 
   String get eveningTemp {
-    return "$eveningTempValue° C";
+    return "${eveningTempValue.round()}° C";
   }
 
   String get nightTemp {
-    return "$nightTempValue° C";
+    return "${nightTempValue.round()}° C";
   }
 }

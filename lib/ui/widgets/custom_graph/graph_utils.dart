@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'dart:ui';
 
-List<Offset> calculateLocationInCanvas({Size canvasSize, List<double> dataY}) {
+List<Offset> calculateLocationInCanvas({Size canvasSize, List<int> dataY}) {
   List<Offset> retval = <Offset>[];
 
   final maxValue = dataY.reduce((value, element) => max(value, element));

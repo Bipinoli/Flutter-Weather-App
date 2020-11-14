@@ -6,7 +6,7 @@ import 'graph_utils.dart';
 
 Widget _buildGraphLabels({
   BoxConstraints constraints,
-  List<double> dataY,
+  List<int> dataY,
   List<String> labelImageUrls,
   List<String> labelTexts,
 }) {
@@ -56,7 +56,7 @@ Widget _buildGraphLabels({
 }
 
 Widget buildGraph(
-    {List<double> dataY,
+    {List<int> dataY,
     int highlightedIndex,
     List<String> labelImageUrls,
     List<String> labelTexts}) {

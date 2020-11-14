@@ -6,9 +6,11 @@ import 'package:weather_app/ui/widgets/sunrise_sunset_visual/sunrise_sunset_util
 import "sunrise_sunset_painter.dart";
 
 class SunriseSunset extends StatelessWidget {
-  final double coverPercent = 0.7;
-  final String sunRise = "6.05 AM";
-  final String sunSet = "6:47 PM";
+  final double coverPercent;
+  final String sunRise;
+  final String sunSet;
+
+  SunriseSunset({this.coverPercent, this.sunRise, this.sunSet});
 
   List<Widget> _buildLabels({Offset sunRisePoint, Offset sunSetPoint}) {
     return [

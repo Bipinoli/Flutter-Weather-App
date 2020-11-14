@@ -12,7 +12,7 @@ class GraphLinePainter extends CustomPainter {
     in the exact location.
    */
   int highlightedIndex;
-  List<double> dataY;
+  List<int> dataY;
 
   GraphLinePainter({this.dataY, this.highlightedIndex});
 
