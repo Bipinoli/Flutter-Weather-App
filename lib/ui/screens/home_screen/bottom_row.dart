@@ -1,7 +1,7 @@
 import "dart:ui";
 
 import "package:flutter/material.dart";
-import 'package:weather_app/constants/colors.dart';
+import 'package:weather_app/ui/constants/colors.dart';
 
 class BottomRow extends StatelessWidget {
   @override
@@ -27,7 +27,7 @@ class BottomRow extends StatelessWidget {
                     height: 6.0,
                   ),
                   Text(
-                    "810mb",
+                    "1021 hpa",
                     style: TextStyle(
                       fontSize: 18.0,
                       color: CustomColors.black,
@@ -39,7 +39,7 @@ class BottomRow extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    "Visibility",
+                    "Wind",
                     style: TextStyle(
                       color: CustomColors.gray,
                     ),
@@ -48,7 +48,7 @@ class BottomRow extends StatelessWidget {
                     height: 6.0,
                   ),
                   Text(
-                    "5km",
+                    "0.21 m/s",
                     style: TextStyle(
                       fontSize: 18.0,
                       color: CustomColors.black,

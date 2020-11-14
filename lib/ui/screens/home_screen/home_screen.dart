@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:flutter/services.dart';
-import 'package:weather_app/constants/colors.dart';
-import 'package:weather_app/widgets/custom_graph/custom_graph.dart';
+import 'package:weather_app/ui/constants/colors.dart';
+import 'package:weather_app/ui/widgets/custom_graph/custom_graph.dart';
 
 import 'bottom_row.dart';
 
@@ -11,20 +10,18 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<double> dataY = [26, 28, 28, 24, 24];
+  final List<double> dataY = [26, 28, 28, 24];
   final List<String> labelImageUrls = [
-    "http://openweathermap.org/img/wn/10d.png",
-    "http://openweathermap.org/img/wn/10d.png",
-    "http://openweathermap.org/img/wn/10d.png",
-    "http://openweathermap.org/img/wn/10d.png",
+    "http://openweathermap.org/img/wn/01d.png",
+    "http://openweathermap.org/img/wn/02d.png",
+    "http://openweathermap.org/img/wn/03d.png",
     "http://openweathermap.org/img/wn/10d.png",
   ];
   final List<String> labelTexts = [
-    "4 PM",
-    "10 PM",
-    "1 AM",
-    "4 AM",
-    "7 AM",
+    "morning",
+    "day",
+    "evening",
+    "night",
   ];
   final int highlightedIndex = 2;
 
@@ -32,9 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print("unfocusing");
-//        FocusScope.of(context).unfocus();
-        SystemChannels.textInput.invokeMethod('TextInput.hide');
+        FocusScope.of(context).unfocus();
+//        SystemChannels.textInput.invokeMethod('TextInput.hide');
       },
       child: Scaffold(
         backgroundColor: CustomColors.white,
@@ -45,38 +41,34 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Calicut, Kerela",
+                TextField(
+                  textAlign: TextAlign.center,
+                  textCapitalization: TextCapitalization.sentences,
                   style: TextStyle(
                     fontSize: 22.0,
                     color: CustomColors.black,
                     fontWeight: FontWeight.bold,
                   ),
-                ),
-                SizedBox(
-                  height: 5.0,
-                ),
-                Text(
-                  "Sunday, 1 AM",
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w400,
-                    color: CustomColors.black,
+                  decoration: InputDecoration(
+                    hintText: "Enter you city ...",
                   ),
+                  onSubmitted: (value) {
+                    print("entered city $value");
+                  },
                 ),
               ],
             ),
           ),
           elevation: 0.0,
           actions: [
-            IconButton(
-                icon: Icon(Icons.search, size: 32.0),
-                onPressed: () {
-                  print("clicked");
-
-//                FocusScope.of(context).requestFocus(FocusNode());
-                  SystemChannels.textInput.invokeMethod('TextInput.show');
-                }),
+//            IconButton(
+//                icon: Icon(Icons.search, size: 32.0),
+//                onPressed: () {
+//                  print("clicked");
+//
+////                FocusScope.of(context).requestFocus(FocusNode());
+//                  SystemChannels.textInput.invokeMethod('TextInput.show');
+//                }),
           ],
         ),
         body: Container(
@@ -94,6 +86,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Text(
+                "Saturday, Nov 14, 2020",
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w400,
+                  color: CustomColors.black,
+                ),
+              ),
               Container(
                 height: MediaQuery.of(context).size.height * .3,
                 child: Column(
@@ -104,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           "http://openweathermap.org/img/wn/10d@2x.png"),
                     ),
                     Text(
-                      "28°",
+                      "28° C",
                       style: TextStyle(
                         fontSize: 32.0,
                         fontWeight: FontWeight.bold,

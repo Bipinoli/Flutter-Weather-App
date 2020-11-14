@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
-import 'package:flutter/services.dart';
-import 'package:weather_app/constants/colors.dart';
-import 'package:weather_app/widgets/sunrise_sunset_visual/sunrise_sunset.dart';
+import 'package:weather_app/ui/constants/colors.dart';
+import 'package:weather_app/ui/widgets/sunrise_sunset_visual/sunrise_sunset.dart';
 
 class DetailsScreen extends StatefulWidget {
   @override
@@ -14,8 +13,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print("hiding");
-        SystemChannels.textInput.invokeMethod("TextInput.hide");
+        FocusScope.of(context).unfocus();
+//        SystemChannels.textInput.invokeMethod("TextInput.hide");
       },
       child: Scaffold(
         backgroundColor: CustomColors.white,
@@ -47,22 +46,24 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         child: Row(
                           children: [
                             Expanded(
+                                flex: 2,
                                 child: Text(
-                              "WED",
-                              style: TextStyle(
-                                color: CustomColors.black,
-                              ),
-                            )),
+                                  "Wednesday",
+                                  style: TextStyle(
+                                    color: CustomColors.black,
+                                  ),
+                                )),
                             Expanded(
+                                flex: 1,
                                 child: Text(
-                              "24° C",
-                              style: TextStyle(
-                                color: CustomColors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            )),
+                                  "24° C",
+                                  style: TextStyle(
+                                    color: CustomColors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                )),
                             Expanded(
-                              flex: 2,
+                              flex: 3,
                               child: Row(
                                 children: [
                                   Image(

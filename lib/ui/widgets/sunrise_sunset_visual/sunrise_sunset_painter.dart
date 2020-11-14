@@ -3,8 +3,8 @@ import "dart:ui" as ui;
 
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
-import 'package:weather_app/constants/colors.dart';
-import 'package:weather_app/widgets/sunrise_sunset_visual/sunrise_sunset_utils.dart';
+import 'package:weather_app/ui/constants/colors.dart';
+import 'package:weather_app/ui/widgets/sunrise_sunset_visual/sunrise_sunset_utils.dart';
 
 class SunriseSunsetPainter extends CustomPainter {
   final double coverPercent;

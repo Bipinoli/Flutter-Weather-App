@@ -4,7 +4,7 @@ class CustomColors {
   static const Color black = Color(0xFF101419);
   static const Color gray = Color(0x77101419);
   static const Color lightGray = Color(0x33101419);
-  static const Color white = Color(0xFFF7F9F7);
+  static const Color white = Color(0xFFFFFFFF);
   static const Color red = Color(0xFFEC6E4C);
   static const Color lightRed = Color(0x55EC6E4C);
 

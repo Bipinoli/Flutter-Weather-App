@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/constants/colors.dart';
-import 'package:weather_app/screens/details_screen/details_screen.dart';
-import 'package:weather_app/screens/home_screen/home_screen.dart';
+import 'package:weather_app/ui/constants/colors.dart';
+import 'package:weather_app/ui/screens/details_screen/details_screen.dart';
+import 'package:weather_app/ui/screens/home_screen/home_screen.dart';
 
 void main() {
   runApp(MyApp());
