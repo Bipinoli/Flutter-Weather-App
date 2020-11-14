@@ -22,6 +22,44 @@ class WeeklyWeather {
     return DateFormat("E, MMMM d, y").format(currentDateTime);
   }
 
+  @override
+  String toString() {
+    return """
+      city: $city
+      timezone: $timezone
+      weather: [
+      {
+        ...
+      },
+    """;
+  }
+
+  factory WeeklyWeather.fromJson(Map<String, dynamic> json) {
+    return WeeklyWeather(
+      city: json["city"]["name"],
+      timezone: json["city"]["timezone"],
+      weather: <WeatherData>[
+        ...json["list"].map((data) {
+          return WeatherData(
+            timeStamp: data["dt"],
+            sunSetTimeStamp: data["sunset"],
+            sunRiseTimeStamp: data["sunrise"],
+            pressureValue: data["pressure"],
+            humidityValue: data["humidity"],
+            windSpeed: data["speed"],
+            windAngle: data["deg"],
+            weatherIcon: data["weather"][0]["icon"],
+            weatherDescription: data["weather"][0]["description"],
+            dayTempValue: data["temp"]["day"].toDouble(),
+            eveningTempValue: data["temp"]["eve"].toDouble(),
+            morningTempValue: data["temp"]["morn"].toDouble(),
+            nightTempValue: data["temp"]["night"].toDouble(),
+          );
+        }).toList()
+      ],
+    );
+  }
+
   factory WeeklyWeather.mock() {
     return WeeklyWeather(
       city: "Kathmandu",

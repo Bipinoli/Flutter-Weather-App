@@ -5,10 +5,10 @@ class WeatherData {
   int timeStamp;
   int sunRiseTimeStamp;
   int sunSetTimeStamp;
-  double pressureValue;
-  double humidityValue;
+  int pressureValue;
+  int humidityValue;
   double windSpeed;
-  double windAngle;
+  int windAngle;
   String weatherIcon;
   String weatherDescription;
   double morningTempValue;
@@ -31,6 +31,25 @@ class WeatherData {
     this.morningTempValue,
     this.nightTempValue,
   });
+
+  @override
+  String toString() {
+    return """
+      timeStamp: $timeStamp
+      sunRiseTimeStamp: $sunRiseTimeStamp
+      sunSetTimeStamp: $sunSetTimeStamp
+      pressureValue: $pressureValue
+      humidityValue: $humidityValue
+      windSpeed: $windSpeed
+      windAngle: $windAngle
+      weatherIcon: $weatherIcon
+      weatherDescription: $weatherDescription
+      dayTempValue: $dayTempValue
+      eveningTempValue: $eveningTempValue
+      morningTempValue: $morningTempValue
+      nightTempValue: $nightTempValue
+    """;
+  }
 
   String get pressure {
     return "$pressureValue hpa";
